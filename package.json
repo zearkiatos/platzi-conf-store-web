@@ -1,0 +1,24 @@
+{
+  "name": "platzi-conf-store-web",
+  "version": "1.0.0",
+  "description": "This is a platzi conf's web store 🛒 to buy products of the platzi conf event. This is a project for practice and understand the reactjs ⚛️ and the react hooks 🪝",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zearkiatos/platzi-conf-store-web.git"
+  },
+  "keywords": [],
+  "author": "Pedro Capriles <caprilespe@outlook.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zearkiatos/platzi-conf-store-web/issues"
+  },
+  "homepage": "https://github.com/zearkiatos/platzi-conf-store-web#readme",
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
