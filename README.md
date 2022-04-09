@@ -1,6 +1,9 @@
 # Description
 This is a platzi conf's web store 🛒 to buy products of the platzi conf event. This is a project for practice and understand the reactjs ⚛️ and the react hooks 🪝
 
+![Github](https://github.com/zearkiatos/platzi-conf-store-web/actions/workflows/action.yml/badge.svg)
+![GitlabCI](https://gitlab.com/caprilespe/platzi-conf-store-web/badges/develop/pipeline.svg)
+
 # Make with
 [![ReactJS](https://img.shields.io/badge/react-61dafb?style=for-the-badge&logo=react&logoColor=white&labelColor=000000)]()
 [![JavaScript](https://img.shields.io/badge/javascript-ead547?style=for-the-badge&logo=javascript&logoColor=white&labelColor=000000)]()
@@ -8,3 +11,5 @@ This is a platzi conf's web store 🛒 to buy products of the platzi conf event.
 # Project link
 
 Github: [https://zearkiatos.github.io/platzi-conf-store-web/](https://zearkiatos.github.io/platzi-conf-store-web/)
+
+Gitlab 🦊: [https://caprilespe.gitlab.io/platzi-conf-store-web/](https://caprilespe.gitlab.io/platzi-conf-store-web/)
