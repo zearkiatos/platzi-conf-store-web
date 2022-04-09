@@ -17,3 +17,5 @@ Gitlab 🦊: [https://caprilespe.gitlab.io/platzi-conf-store-web/](https://capri
 Vercel: [https://platzi-conf-store-web.vercel.app/](https://platzi-conf-store-web.vercel.app/)
 
 Firebase 🔥: [https://platzi-conf-store-web.firebaseapp.com/](https://platzi-conf-store-web.firebaseapp.com/)
+
+Render 📄: [https://platzi-conf-store-web.onrender.com/](https://platzi-conf-store-web.onrender.com/)

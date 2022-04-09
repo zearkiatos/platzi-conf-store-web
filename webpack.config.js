@@ -16,7 +16,8 @@ module.exports = {
       '@containers': path.resolve(__dirname, 'src/containers/'),
       '@styles': path.resolve(__dirname, 'src/styles/'),
       '@router': path.resolve(__dirname, 'src/router/'),
-      '@config': path.resolve(__dirname, 'src/config/')
+      '@config': path.resolve(__dirname, 'src/config/'),
+      '@mocks': path.resolve(__dirname, 'src/mocks/')
     }
   },
   module: {
