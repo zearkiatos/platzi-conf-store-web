@@ -90,3 +90,8 @@
       display: block;
       outline: none;
   }
+
+  .information-buttons button {
+      display: inline;
+      max-width: 128px;
+  }
