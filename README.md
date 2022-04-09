@@ -13,3 +13,5 @@ This is a platzi conf's web store 🛒 to buy products of the platzi conf event.
 Github: [https://zearkiatos.github.io/platzi-conf-store-web/](https://zearkiatos.github.io/platzi-conf-store-web/)
 
 Gitlab 🦊: [https://caprilespe.gitlab.io/platzi-conf-store-web/](https://caprilespe.gitlab.io/platzi-conf-store-web/)
+
+Vercel: [https://platzi-conf-store-web.vercel.app/](https://platzi-conf-store-web.vercel.app/)

@@ -7,7 +7,9 @@
     "dev": "webpack serve --config webpack.config.dev.js",
     "build": "webpack",
     "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",
-    "lint": "eslint src/ --fix"
+    "lint": "eslint src/ --fix",
+    "firebase:deploy": "firebase deploy",
+    "prefirebase:deploy": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -21,16 +23,20 @@
   },
   "homepage": "https://github.com/zearkiatos/platzi-conf-store-web#readme",
   "dependencies": {
+    "firebase": "^9.6.10",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@babel/eslint-parser": "^7.17.0",
+    "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "babel-loader": "^8.2.4",
     "css-loader": "^6.7.1",
+    "dotenv-webpack": "^7.1.0",
     "eslint": "^8.13.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
@@ -49,7 +55,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run format && npm run lint", 
+      "pre-commit": "npm run format && npm run lint",
       "pre-push": "npm run format && npm run lint"
     }
   }
