@@ -19,3 +19,5 @@ Vercel: [https://platzi-conf-store-web.vercel.app/](https://platzi-conf-store-we
 Firebase 🔥: [https://platzi-conf-store-web.firebaseapp.com/](https://platzi-conf-store-web.firebaseapp.com/)
 
 Render 📄: [https://platzi-conf-store-web.onrender.com/](https://platzi-conf-store-web.onrender.com/)
+
+Railway 🚅: [https://platzi-conf-store-web-staging-fa34.up.railway.app/](https://platzi-conf-store-web-staging-fa34.up.railway.app/)
