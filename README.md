@@ -15,3 +15,5 @@ Github: [https://zearkiatos.github.io/platzi-conf-store-web/](https://zearkiatos
 Gitlab 🦊: [https://caprilespe.gitlab.io/platzi-conf-store-web/](https://caprilespe.gitlab.io/platzi-conf-store-web/)
 
 Vercel: [https://platzi-conf-store-web.vercel.app/](https://platzi-conf-store-web.vercel.app/)
+
+Firebase 🔥: [https://platzi-conf-store-web.firebaseapp.com/](https://platzi-conf-store-web.firebaseapp.com/)
