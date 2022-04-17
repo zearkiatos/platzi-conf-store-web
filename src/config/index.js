@@ -1,5 +1,5 @@
 const config = {
-    NODE_ENV: process.env.NODE_ENV,
+    ENVIRONMENT: process.env.ENVIRONMENT,
     FIREBASE: {
       API_KEY: process.env.FIREBASE_API_KEY,
       AUTH_DOMAIN: process.env.FIREBASE_AUTH_DOMAIN,
@@ -12,6 +12,10 @@ const config = {
       SANDBOX_ACCOUNT: process.env.PAYPAL_SANDBOX_ACCOUNT,
       CLIENT_API: process.env.PAYPAL_CLIENT_ID,
       SECRET: process.env.PAYPAL_SECRET
+    },
+    GOOGLE_MAPS: {
+      API_BASE_URL: process.env.GOOGLE_MAPS_API_BASE_URL,
+      API_KEY: process.env.GOOGLE_MAPS_API_KEY
     }
   };
   

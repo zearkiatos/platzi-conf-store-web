@@ -26,15 +26,19 @@ jobs:
     - name: Create .env
       run: |
         touch .env &&
-        echo "NODE_ENV=${NODE_ENV}" > .env
+        echo "ENVIRONMENT=${ENVIRONMENT}" > .env
         echo "PAYPAL_SANDBOX_ACCOUNT=${PAYPAL_SANDBOX_ACCOUNT}" >> .env
         echo "PAYPAL_CLIENT_ID=${PAYPAL_CLIENT_ID}" >> .env
         echo "PAYPAL_SECRET=${PAYPAL_SECRET}" >> .env
+        echo "GOOGLE_MAPS_API_BASE_URL=${GOOGLE_MAPS_API_BASE_URL}" >> .env
+        echo "GOOGLE_MAPS_API_KEY=${GOOGLE_MAPS_API_KEY}" >> .env
       env:
-        NODE_ENV: ${{ secrets.NODE_ENV }}
+        ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
         PAYPAL_SANDBOX_ACCOUNT: ${{ secrets.PAYPAL_SANDBOX_ACCOUNT }}
         PAYPAL_CLIENT_ID: ${{ secrets.PAYPAL_CLIENT_ID }}
         PAYPAL_SECRET: ${{ secrets.PAYPAL_SECRET }}
+        GOOGLE_MAPS_API_BASE_URL: ${{ secrets.GOOGLE_MAPS_API_BASE_URL }}
+        GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
     - name: Build docker 🐳
       run: docker build . -t=platzi-conf-store-web:ghb-$GITHUB_RUN_NUMBER
     - name: Build

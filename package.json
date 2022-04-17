@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/zearkiatos/platzi-conf-store-web#readme",
   "dependencies": {
+    "@react-google-maps/api": "^2.8.1",
     "firebase": "^9.6.10",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
