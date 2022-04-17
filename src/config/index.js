@@ -7,6 +7,11 @@ const config = {
       STORAGE_BUCKET: process.env.FIREBASE_STORAGE_BUCKET,
       MESSAGING_SENDER_ID: process.env.FIREBASE_MESSAGING_SENDER_ID,
       APP_ID: process.env.FIREBASE_APP_ID
+    },
+    PAYPAL: {
+      SANDBOX_ACCOUNT: process.env.PAYPAL_SANDBOX_ACCOUNT,
+      CLIENT_API: process.env.PAYPAL_CLIENT_ID,
+      SECRET: process.env.PAYPAL_SECRET
     }
   };
   
