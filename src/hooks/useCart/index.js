@@ -17,11 +17,18 @@ const useCart = () => {
       cart: state.cart.filter((item) => item.id !== payload.id),
     });
 
-    return {
-      addToCart,
-      removeFromCart,
-      state
-    }
+  const addToBuyer = (payload) =>
+    setState({
+      ...state,
+      buyer: [...state.buyer, payload],
+    });
+
+  return {
+    addToCart,
+    addToBuyer,
+    removeFromCart,
+    state,
+  };
 };
 
 export default useCart;

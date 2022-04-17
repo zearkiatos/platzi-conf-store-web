@@ -2,6 +2,7 @@
 import products from '@mocks/products.json';
 
 const initialState = {
+    buyer: [],
     cart: [],
     products
 };
