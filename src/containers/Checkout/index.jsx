@@ -4,6 +4,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import AppContext from '@context/AppContext';
+import { sumTotal } from '@utils';
 import '@styles/checkout.css';
 
 const Checkout = () => {
@@ -11,13 +12,6 @@ const Checkout = () => {
   const { cart } = state;
 
   const handleRemove = (product) => () => removeFromCart(product);
-
-  const sumTotal = () => {
-    const reducer = (accumulator, currentValue) =>
-      accumulator + currentValue.price;
-    const sum = cart.reduce(reducer, 0);
-    return sum;
-  };
 
   const renderCartList =
     cart.length > 0 ? (
@@ -38,7 +32,7 @@ const Checkout = () => {
 
   const renderTotal = cart.length > 0 && (
     <aside className="checkout-sidebar">
-      <h3>Total Price: {`$${sumTotal()}`}</h3>
+      <h3>Total Price: {`$${sumTotal(cart, 'price')}`}</h3>
       <Link to="/checkout/information">
         <button type="button">Continue</button>
       </Link>

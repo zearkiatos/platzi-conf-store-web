@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   entry: './src/index.js',
@@ -19,7 +20,8 @@ module.exports = {
       '@config': path.resolve(__dirname, 'src/config/'),
       '@mocks': path.resolve(__dirname, 'src/mocks/'),
       '@context': path.resolve(__dirname, 'src/context/'),
-      '@hooks': path.resolve(__dirname, 'src/hooks/')
+      '@hooks': path.resolve(__dirname, 'src/hooks/'),
+      '@utils': path.resolve(__dirname, 'src/utils/')
     }
   },
   module: {
@@ -50,6 +52,7 @@ module.exports = {
   },
   mode: 'development',
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
       filename: './index.html',
