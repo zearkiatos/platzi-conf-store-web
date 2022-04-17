@@ -46,6 +46,11 @@ build-app:
     - build-docker
   script:
     - echo "Deploy a review app 🛠"
+    - touch .env
+    - echo "NODE_ENV=${NODE_ENV}" > .env
+    - echo "PAYPAL_SANDBOX_ACCOUNT=${PAYPAL_SANDBOX_ACCOUNT}" >> .env
+    - echo "PAYPAL_CLIENT_ID=${PAYPAL_CLIENT_ID}" >> .env
+    - echo "PAYPAL_SECRET=${PAYPAL_SECRET}" >> .env
     - npm run build
   artifacts:
     expire_in: 1hr
