@@ -2,14 +2,14 @@
 /* eslint-disable arrow-body-style */
 /* eslint-disable react/function-component-definition */
 import React, { useRef, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import AppContext from '@context/AppContext';
 import '@styles/information.css';
 
 const Information = () => {
   const { state, addToBuyer } = useContext(AppContext);
   const form = useRef(null);
-
+  const navigate = useNavigate();
   const { cart } = state;
   const renderCart = cart.map((item) => (
     <div className="information-item" key={item.title}>
@@ -34,6 +34,7 @@ const Information = () => {
       'phone': formData.get('phone')
     };
     addToBuyer(buyer);
+    navigate('/checkout/payment');
   };
   return (
     <div className="information">
