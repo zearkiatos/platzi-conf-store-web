@@ -51,6 +51,8 @@ build-app:
     - echo "PAYPAL_SANDBOX_ACCOUNT=${PAYPAL_SANDBOX_ACCOUNT}" >> .env
     - echo "PAYPAL_CLIENT_ID=${PAYPAL_CLIENT_ID}" >> .env
     - echo "PAYPAL_SECRET=${PAYPAL_SECRET}" >> .env
+    - echo "GOOGLE_MAPS_API_BASE_URL=${GOOGLE_MAPS_API_BASE_URL}" >> .env
+    - echo "GOOGLE_MAPS_API_KEY=${GOOGLE_MAPS_API_KEY}" >> .env
     - npm run build
   artifacts:
     expire_in: 1hr

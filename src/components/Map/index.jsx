@@ -5,14 +5,14 @@ import React from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import config from '@config';
 
-const Map = () => {
+const Map = ({ data }) => {
   const mapStyles = {
     height: '50vh',
     width: '100%',
   };
   const defaultCenter = {
-    lat: 19.4267261,
-    lng: -99.1718796,
+    lat: data.lat,
+    lng: data.lng,
   };
   return (
     <LoadScript googleMapsApiKey={config.GOOGLE_MAPS.GOOGLE_MAPS_API_KEY}>
