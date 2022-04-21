@@ -9,7 +9,6 @@ const useGoogleAddress = (address) => {
 
   const getLocation = async () => {
     const response = await axios(API);
-    console.log(response);
     return response.data.results[0];
   }
   useEffect(() => {
