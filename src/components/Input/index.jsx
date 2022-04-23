@@ -10,7 +10,7 @@ const Input = ({ name, type, placeholder, errorMessage }) => {
             <input type={type} placeholder={placeholder} name={name} />
             {errorMessage && <p>{errorMessage}</p>}
         </div>
-    )
+    );
 }
 
 export default Input;

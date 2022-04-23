@@ -1,15 +1,17 @@
+/* eslint-disable import/imports-first */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable arrow-body-style */
 /* eslint-disable react/function-component-definition */
-import React, { useRef, useContext } from 'react';
+import React, { useRef, useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import AppContext from '@context/AppContext';
 import Input from '@components/Input';
-import useInformationForm from '@hooks/useInformationForm';
+import informationSchema from './informationSchema';
 import '@styles/information.css';
 
 const Information = () => {
   const { state, addToBuyer } = useContext(AppContext);
+  const [ valid, setValid ] = useState(false);
   const form = useRef(null);
   const navigate = useNavigate();
   const { cart } = state;
@@ -22,6 +24,8 @@ const Information = () => {
     </div>
   ));
 
+  const isValid = (validate) => !validate.error;
+
   const handleSubmit = () => {
     const formData = new FormData(form.current);
     const buyer = {
@@ -32,13 +36,16 @@ const Information = () => {
       city: formData.get('city'),
       country: formData.get('country'),
       state: formData.get('state'),
-      postalCode: formData.get('postal-code'),
-      phone: formData.get('phone'),
+      postalCode: parseInt(formData.get('postal-code'), 10),
+      phone: parseInt(formData.get('phone-number'), 10),
     };
-    const { isValid } = useInformationForm(buyer);
-    console.log(isValid);
-    addToBuyer(buyer);
-    // navigate('/checkout/payment');
+    const validation = informationSchema.validate(buyer);
+    console.log(validation.error.reduce());
+    setValid(isValid(validation));
+    if (isValid(validation)) {
+      addToBuyer(buyer);
+      navigate('/checkout/payment');
+    }
   };
   return (
     <div className="information">
