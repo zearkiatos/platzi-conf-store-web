@@ -4,6 +4,8 @@
 import React, { useRef, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import AppContext from '@context/AppContext';
+import Input from '@components/Input';
+import useInformationForm from '@hooks/useInformationForm';
 import '@styles/information.css';
 
 const Information = () => {
@@ -23,18 +25,20 @@ const Information = () => {
   const handleSubmit = () => {
     const formData = new FormData(form.current);
     const buyer = {
-      'name': formData.get('name'),
-      'email': formData.get('email'),
-      'address': formData.get('address'),
-      'apartment': formData.get('apartment'),
-      'city': formData.get('city'),
-      'country': formData.get('country'),
-      'state': formData.get('state'),
-      'postalCode': formData.get('postal-code'),
-      'phone': formData.get('phone')
+      name: formData.get('name'),
+      email: formData.get('email'),
+      address: formData.get('address'),
+      apartment: formData.get('apartment'),
+      city: formData.get('city'),
+      country: formData.get('country'),
+      state: formData.get('state'),
+      postalCode: formData.get('postal-code'),
+      phone: formData.get('phone'),
     };
+    const { isValid } = useInformationForm(buyer);
+    console.log(isValid);
     addToBuyer(buyer);
-    navigate('/checkout/payment');
+    // navigate('/checkout/payment');
   };
   return (
     <div className="information">
@@ -43,19 +47,24 @@ const Information = () => {
           <h2>Contact Information</h2>
           <div className="information-form">
             <form ref={form}>
-              <input type="text" placeholder="Full Name" name="name" />
-              <input type="email" placeholder="Email" name="email" />
-              <input type="text" placeholder="Address" name="address" />
-              <input
+              <Input
+                type="text"
+                placeholder="Full Name"
+                name="name"
+                errorMessage="Mensaje de error"
+              />
+              <Input type="email" placeholder="Email" name="email" />
+              <Input type="text" placeholder="Address" name="address" />
+              <Input
                 type="text"
                 placeholder="Apartment Number"
                 name="apartment"
               />
-              <input type="text" placeholder="City" name="city" />
-              <input type="text" placeholder="Country" name="country" />
-              <input type="text" placeholder="State" name="state" />
-              <input type="text" placeholder="Postal Code" name="postal-code" />
-              <input
+              <Input type="text" placeholder="City" name="city" />
+              <Input type="text" placeholder="Country" name="country" />
+              <Input type="text" placeholder="State" name="state" />
+              <Input type="text" placeholder="Postal Code" name="postal-code" />
+              <Input
                 type="text"
                 placeholder="Phone Number"
                 name="phone-number"
@@ -66,7 +75,11 @@ const Information = () => {
             <button type="button" className="information-back">
               <Link to="checkout">Back</Link>
             </button>
-            <button type="button" className="information-next" onClick={handleSubmit}>
+            <button
+              type="button"
+              className="information-next"
+              onClick={handleSubmit}
+            >
               Pay
             </button>
           </div>
