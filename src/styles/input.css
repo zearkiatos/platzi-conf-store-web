@@ -16,3 +16,8 @@ input {
     width: 100%;
     box-sizing: border-box;
   }
+
+.input-error {
+  border: 1px solid red;
+  background-color:lightpink;
+}

@@ -4,13 +4,17 @@
 import React from 'react';
 import '@styles/input.css';
 
-const Input = ({ name, type, placeholder, errorMessage }) => {
-    return (
-        <div>
-            <input type={type} placeholder={placeholder} name={name} />
-            {errorMessage && <p>{errorMessage}</p>}
-        </div>
-    );
-}
+const Input = ({ name, type, placeholder, error }) => {
+  return (
+    <div>
+      <input
+        className={error?.context.label === name ? 'input-error' : ''}
+        type={type}
+        placeholder={placeholder}
+        name={name}
+      />
+    </div>
+  );
+};
 
 export default Input;
