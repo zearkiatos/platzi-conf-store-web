@@ -166,6 +166,20 @@ input {
     width: 100%;
     box-sizing: border-box;
   }
+
+.input-error {
+  border: 1px solid red;
+  background-color:lightpink;
+}
+.error-container {
+    width: 100%;
+    background-color:lightpink;
+    padding: 1rem 0 1rem 0.5rem;
+    border-radius: 5px;
+    border: 2px solid red;
+    color: red;
+    font-weight: bold;
+}
 .information {
     grid-template-columns: 3fr 1fr;
     grid-gap: 2rem;
