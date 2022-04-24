@@ -22,13 +22,23 @@
     border: none;
     outline: none;
   }
-  .payment-element {
+  .payment-element, .payment-total {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     border-bottom: 1px solid #eee;
   }
+  .payment-total {
+    border-bottom: none;
+    text-align: end;
+    justify-content:end;
+    font-size:x-large;
+  }
   .payment-element h4 {
     margin: 0;
+  }
+
+  .payment-button {
+    width: 100%;
   }

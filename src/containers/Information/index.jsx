@@ -1,3 +1,4 @@
+/* eslint-disable import/order */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable import/imports-first */
@@ -10,6 +11,7 @@ import AppContext from '@context/AppContext';
 import Input from '@components/Input';
 import Error from '@components/Error';
 import informationSchema from './informationSchema';
+import { sumTotal } from '@utils';
 import '@styles/information.css';
 
 const Information = () => {
@@ -135,6 +137,10 @@ const Information = () => {
       <aside className="information-sidebar">
         <h3>Order</h3>
         {renderCart}
+        <div className="information-total">
+          <h4><b>Total Price</b></h4>
+          <span><b>${sumTotal(cart, 'price')}</b></span>
+        </div>
       </aside>
     </div>
   );

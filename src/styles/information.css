@@ -31,15 +31,19 @@
     border: none;
     outline: none;
   }
-  .information-element {
+  .information-element, .information-total {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     border-bottom: 1px solid #eee;
   }
-  .information-element h4 {
+  .information-element h4, .information-total h4 {
     margin: 0;
+  }
+  .information-total {
+    border-bottom: none;
+    font-size:x-large;
   }
   h2 {
     margin: 0 0 8px 0;

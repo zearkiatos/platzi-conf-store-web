@@ -29,6 +29,7 @@ const Payment = () => {
   const buttonStyles = {
     layout: 'vertical',
     shape: 'rect',
+    width: '100%'
   };
   const handlePaymentSuccess = (data) => {
     if (data.status === 'COMPLETED') {
@@ -47,6 +48,9 @@ const Payment = () => {
       <div className="payment-content">
         <h3>Order Resumen:</h3>
         {renderCart}
+        <div className="payment-total">
+          Total Price ${sumTotal(cart, 'price')}
+        </div>
         <button type="button" className="payment-button">
           <PayPalButton
             paypalOptions={paypalOptions}
