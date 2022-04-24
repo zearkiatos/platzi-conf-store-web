@@ -16,6 +16,9 @@ const config = {
     GOOGLE_MAPS: {
       API_BASE_URL: process.env.GOOGLE_MAPS_API_BASE_URL,
       API_KEY: process.env.GOOGLE_MAPS_API_KEY
+    },
+    PLATZI_CONF_STORE: {
+      API: process.env.PLATZI_CONF_STORE_STRAPI_API_BASE_URL
     }
   };
   

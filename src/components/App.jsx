@@ -10,14 +10,17 @@ import useCart from '@hooks/useCart';
 // eslint-disable-next-line react/function-component-definition
 const App = () => {
   const cart = useCart();
+  const isEmpty = Object.keys(cart.state).length > 0;
   return (
-    <AppContext.Provider value={cart}>
-      <BrowserRouter>
-        <Layout>
-          <Router />
-        </Layout>
-      </BrowserRouter>
-    </AppContext.Provider>
+    isEmpty ? (
+      <AppContext.Provider value={cart}>
+        <BrowserRouter>
+          <Layout>
+            <Router />
+          </Layout>
+        </BrowserRouter>
+      </AppContext.Provider>
+    ) : "Loading..."
   );
 };
 

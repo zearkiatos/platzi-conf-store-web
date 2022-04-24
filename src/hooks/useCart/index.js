@@ -1,10 +1,21 @@
 /* eslint-disable import/no-unresolved */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import config from '@config';
 import initialState from '@mocks/initialState';
 
 const useCart = () => {
   const [state, setState] = useState(initialState);
+  const [products, setProducts] = useState([]);
 
+  const getProducts = async () => {
+    const response = await axios(`${config.PLATZI_CONF_STORE.API}/api/products`);
+    setProducts(response.data.data);
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
   const addToCart = (payload) =>
     setState({
       ...state,
@@ -35,6 +46,7 @@ const useCart = () => {
     addNewOrder,
     removeFromCart,
     state,
+    products
   };
 };
 

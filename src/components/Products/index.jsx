@@ -6,13 +6,12 @@ import AppContext from '@context/AppContext';
 import '@styles/products.css';
 
 const Products = () => {
-  const { state, addToCart } = useContext(AppContext);
-  const { products } = state;
+  const { addToCart, products } = useContext(AppContext);
   const handleAddToCart = (product) => () => addToCart(product);
-  const renderProducts = products.map((product) => (
+  const renderProducts = products.map(({ attributes }) => (
     <Product
-      key={product.id}
-      product={product}
+      key={attributes.id}
+      product={attributes}
       handleAddToCart={handleAddToCart}
     />
   ));
