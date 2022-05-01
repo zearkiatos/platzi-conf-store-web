@@ -6,7 +6,7 @@ module.exports = {
   collectCoverageFrom: ['src/**/*.js', '!**/node_modules/**'],
   rootDir: ".",
   moduleNameMapper: {
-   '\\.(css|less)$': "<rootDir>/tests/__mocks__/styleMock.js",
+   '\\.(css|styl|sass|less|scss)$': "<rootDir>/tests/__mocks__/styleMock.js",
     'components/(.*)$': '<rootDir>/src/components/$1',
   },
   setupFilesAfterEnv: ['<rootDir>/tests/setupTest.js']

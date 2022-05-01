@@ -26,12 +26,20 @@ function setUpDomEnvironment() {
   copyProps(window, global);
 }
 describe('Unit test suite for Footer component', () => {
+  let FooterComponent;
   beforeAll(() => {
     setUpDomEnvironment();
+    FooterComponent = mount(<Footer />);
   });
   test("Should get Footer's render", () => {
-    const FooterComponent = mount(<Footer />);
-
     expect(FooterComponent.length).toEqual(1);
+  });
+
+  test("Should render the title", () => {
+    const expectedTitle = 'Platzi Conf Store';
+
+    const footerTitleText = FooterComponent.find('.footer-title').text();
+
+    expect(footerTitleText).toEqual(expectedTitle);
   });
 });
