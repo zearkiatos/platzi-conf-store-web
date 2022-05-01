@@ -9,7 +9,9 @@
     "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",
     "lint": "eslint src/ --fix",
     "firebase:deploy": "firebase deploy",
-    "prefirebase:deploy": "npm run build"
+    "prefirebase:deploy": "npm run build",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -39,10 +41,13 @@
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
     "babel-loader": "^8.2.4",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.7.1",
     "dotenv-webpack": "^7.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^8.13.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
@@ -53,6 +58,8 @@
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^7.0.4",
+    "jest": "^28.0.3",
+    "jsdom": "^19.0.0",
     "mini-css-extract-plugin": "^2.6.0",
     "prettier": "^2.6.2",
     "webpack": "^5.71.0",
