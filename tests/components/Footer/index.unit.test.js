@@ -5,6 +5,7 @@ import { mount } from 'enzyme';
 import Footer from '@components/Footer';
 import environmentUtils from '../../utils/environmentUtils';
 
+
 describe('Unit test suite for Footer component', () => {
   let FooterComponent;
   beforeAll(() => {

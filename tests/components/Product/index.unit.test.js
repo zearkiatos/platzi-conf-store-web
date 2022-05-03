@@ -5,10 +5,10 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import LayoutMock from '../__mocks__/LayoutMock';
+import LayoutMock from '../../__mocks__/LayoutMock';
 import Product from '@components/Product';
-import ProductBuilder from '../builders/productBuilder';
-import environmentUtils from '../utils/environmentUtils';
+import ProductBuilder from '../../builders/productBuilder';
+import environmentUtils from '../../utils/environmentUtils';
 
 describe('Suite unit test for Product component', () => {
   beforeAll(() => {
