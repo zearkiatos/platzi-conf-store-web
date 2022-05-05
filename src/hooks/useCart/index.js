@@ -16,7 +16,7 @@ const useCart = () => {
   useEffect(() => {
     getProducts();
   }, []);
-  const addToCart = (payload) =>
+  const addToCart = (payload) => 
     setState({
       ...state,
       cart: [...state.cart, payload],
