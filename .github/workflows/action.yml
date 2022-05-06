@@ -40,7 +40,7 @@ jobs:
         GOOGLE_MAPS_API_BASE_URL: ${{ secrets.GOOGLE_MAPS_API_BASE_URL }}
         GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
     - name: Test 🧪
-      run: npm run test
+      run: npm run test:updateSnapshot
     - name: Build docker 🐳
       run: docker build . -t=platzi-conf-store-web:ghb-$GITHUB_RUN_NUMBER
     - name: Build
