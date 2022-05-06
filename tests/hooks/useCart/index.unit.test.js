@@ -10,33 +10,70 @@ jest.mock('react', () => ({
   useEffect: jest.fn(),
 }));
 
+const closure = (initial) => (newPayload) => ({
+  ...initial,
+  cart: [newPayload],
+});
+
+const closureRemove = (initial) => () => ({
+  ...initial,
+  cart: [],
+});
+
 describe('Suite unit test for useCart custom hook', () => {
-  beforeEach(() => {
+  test('Should add a new product to the cart', () => {
+    const mockPayload = new ProductBuilder().build();
     useStateMock.mockImplementation((initialState) => {
-      let state = initialState;
+      const add = closure(initialState);
+      const state = add(mockPayload);
+
       const setState = (newState) => {
         const payload = {
           ...initialState,
-          newState,
+          ...newState
         };
-        state = payload;
         return payload;
       };
-      const getState = () => state;
-      return [get getState(), setState];
+
+      return [state, setState];
     });
-    
-  });
-  test('Should add a new product to the cart', () => {
-    const payload = new ProductBuilder().build();
-    const { addToCart, state } = useCart();
+    const { addToCart } = useCart();
     const expectedState = {
       buyer: [],
-      cart: [payload],
+      cart: [mockPayload],
       orders: [],
     };
 
-    addToCart(payload);
+    addToCart(mockPayload);
+    const { state } = useCart();
+
+    expect(state).toEqual(expectedState);
+  });
+
+  test('Should remove a product from cart', () => {
+    const mockPayload = new ProductBuilder().build();
+    useStateMock.mockImplementation((initialState) => {
+      const remove = closureRemove(initialState);
+      const state = remove(mockPayload);
+
+      const setState = (newState) => {
+        const payload = {
+          ...initialState,
+          ...newState,
+        };
+        return payload;
+      };
+
+      return [state, setState];
+    });
+    const { removeFromCart, state } = useCart();
+    const expectedState = {
+      buyer: [],
+      cart: [],
+      orders: [],
+    };
+
+    removeFromCart(mockPayload);
 
     expect(state).toEqual(expectedState);
   });
