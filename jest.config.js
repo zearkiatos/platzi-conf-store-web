@@ -10,6 +10,8 @@ module.exports = {
     'components/(.*)$': '<rootDir>/src/components/$1',
     'context/(.*)$': '<rootDir>/src/context/$1',
     '^@config': '<rootDir>/src/config/index.js',
+    'hooks/(.*)$': '<rootDir>/src/hooks/$1',
+    'mocks/(.*)$': '<rootDir>/src/mocks/$1',
   },
   setupFilesAfterEnv: ['<rootDir>/tests/setupTest.js']
 };
