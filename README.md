@@ -3,6 +3,7 @@ This is a platzi conf's web store 🛒 to buy products of the platzi conf event.
 
 ![Github](https://github.com/zearkiatos/platzi-conf-store-web/actions/workflows/action.yml/badge.svg)
 ![GitlabCI](https://gitlab.com/caprilespe/platzi-conf-store-web/badges/develop/pipeline.svg)
+![TravisCI](https://api.travis-ci.com/zearkiatos/platzi-conf-store-web.svg?branch=develop)
 
 # Make with
 [![ReactJS](https://img.shields.io/badge/react-61dafb?style=for-the-badge&logo=react&logoColor=white&labelColor=000000)]()
