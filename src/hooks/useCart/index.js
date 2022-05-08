@@ -1,20 +1,19 @@
 /* eslint-disable import/no-unresolved */
 import { useState, useEffect } from 'react';
-import axios from 'axios';
-import config from '@config';
+import { getProducts }  from '@clients/Products';
 import initialState from '@mocks/initialState';
 
 const useCart = () => {
   const [state, setState] = useState(initialState);
   const [products, setProducts] = useState([]);
 
-  const getProducts = async () => {
-    const response = await axios(`${config.PLATZI_CONF_STORE.API}/api/products`);
-    setProducts(response.data.data);
-  };
+  const fetchProducts = async () => {
+    const productsGetted = await getProducts();
+    setProducts(productsGetted);
+  }
 
   useEffect(() => {
-    getProducts();
+    fetchProducts();
   }, []);
   const addToCart = (payload) => 
     setState({

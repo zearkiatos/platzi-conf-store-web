@@ -1,3 +1,5 @@
+require('dotenv').config({path: '.env.test'})
+
 module.exports = {
   name: 'platzi-conf-store-web',
   verbose: true,
@@ -5,6 +7,7 @@ module.exports = {
   testEnvironment: 'node',
   collectCoverageFrom: ['src/**/*.js', '!**/node_modules/**'],
   rootDir: ".",
+  
   moduleNameMapper: {
    '\\.(css|styl|sass|less|scss)$': "<rootDir>/tests/__mocks__/styleMock.js",
     'components/(.*)$': '<rootDir>/src/components/$1',
@@ -12,6 +15,7 @@ module.exports = {
     '^@config': '<rootDir>/src/config/index.js',
     'hooks/(.*)$': '<rootDir>/src/hooks/$1',
     'mocks/(.*)$': '<rootDir>/src/mocks/$1',
+    'clients/(.*)$': '<rootDir>/src/clients/$1',
   },
   setupFilesAfterEnv: ['<rootDir>/tests/setupTest.js']
 };

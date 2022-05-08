@@ -22,7 +22,8 @@ module.exports = {
       '@mocks': path.resolve(__dirname, 'src/mocks/'),
       '@context': path.resolve(__dirname, 'src/context/'),
       '@hooks': path.resolve(__dirname, 'src/hooks/'),
-      '@utils': path.resolve(__dirname, 'src/utils/')
+      '@utils': path.resolve(__dirname, 'src/utils/'),
+      '@clients': path.resolve(__dirname, 'src/clients/')
     }
   },
   module: {
